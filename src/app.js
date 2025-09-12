@@ -11,6 +11,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 // 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({extends:true}))
 
 // 라우트 설정
 app.get('/', (req, res) => {
